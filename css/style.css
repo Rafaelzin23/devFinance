@@ -1,0 +1,355 @@
+ :root {
+   --dark-blue: #3a456e;
+   --green: #49AA26;
+   --light-green: #3dd705;
+   --red: #e92929;
+   --black: #121b0f;
+   --bg: #FCFCFC;
+   --bg-panel: #EBEBEB;
+   --color-headings: #0077FF;
+   --color-text: #333333;
+ }
+
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+
+ html {
+   font-size: 93.75%;
+ }
+
+ body {
+   font-family: 'Poppins',
+     sans-serif;
+   background-color: var(--bg);
+ }
+
+ /*PARTE DO MODAL*/
+ .sr-only {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   /*metodo clip:react , serve para recorta um elemento cujo tenha
+    passado como parametro */
+   clip: rect(0, 0, 0, 0);
+   white-space: nowrap;
+   border-width: 0;
+ }
+
+ /*CSS DO CORPO TODO DA PAGINA ABAIXO*/
+ .container {
+   width: min(90vw, 800px);
+   margin: auto;
+ }
+
+ /*CSS DO HEDER DA PAGINA ABAIXO*/
+
+ header {
+   background: rgba(129, 125, 125);
+   padding: 2rem 0 10rem;
+   text-align: center;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ header img {
+   position: relative;
+   left: 5%;
+ }
+
+
+ h2 {
+   margin-top: 3.2rem;
+   margin-bottom: 0.8rem;
+   color: var(--dark-blue);
+   font-weight: normal;
+ }
+
+ #logo {
+   color: white;
+ }
+
+ /*Buttons & Links Abaixo*/
+ a {
+   color: aliceblue;
+   background: #aeb0b6;
+   text-decoration: none;
+   border: 3px solid rgb(129, 127, 127);
+   border-radius: .7rem;
+   padding: .5rem;
+   font-weight: bold;
+ }
+
+ a:hover {
+   color: var(--black);
+   font-weight: bolder;
+ }
+
+ button {
+   width: 100%;
+   height: 50px;
+   border: none;
+   color: white;
+   background: var(--green);
+   padding: 0;
+   border-radius: 0.25rem;
+   cursor: pointer;
+   opacity: 0.8;
+ }
+
+ button:hover {
+   background: var(--light-green);
+   opacity: 1;
+ }
+
+ .button.cancel {
+   color: white;
+   border: solid 2px var(--red);
+   border-radius: 0.25rem;
+   background: var(--red);
+   height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   opacity: 0.8;
+ }
+
+ .button.cancel:hover {
+   background: var(--red);
+   opacity: 1;
+ }
+
+ .button.new {
+   display: inline-block;
+   margin-bottom: .8rem;
+ }
+
+ /**/
+
+ /*Abaixo CSS DA SECTION  BALANCE E CARDS*/
+ #balance {
+   margin-top: -8rem;
+ }
+
+ #balance h2 {
+   color: white;
+   font-weight: 100;
+   margin-top: 0;
+ }
+
+ .card {
+   background: #babdb9;
+   padding: 1.5rem 2rem;
+   border: 2px solid #060806;
+   border-radius: 0.25rem;
+   margin-bottom: 2rem;
+   color: var(--dark-blue);
+ }
+
+ .card h3 {
+   font-weight: normal;
+   font-size: 1rem;
+
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+ }
+
+ .card p {
+   font-size: 2rem;
+   line-height: 3rem;
+   margin-top: 1rem;
+   color: #121b0f;
+ }
+
+ .card.total {
+   background: var(--green);
+   color: white;
+ }
+
+ .card span {
+   color: white;
+ }
+
+
+ /*ABAIXO CSS DA  TABELA ABAIXO */
+
+ #transaction {
+   display: block;
+   width: 100%;
+   overflow-x: auto;
+ }
+
+ #data-table {
+   width: 100%;
+   /*border-spacing, o primeiro valor vai ser o Eixo Vertical , eo    vai ser o Eixo Horizontal*/
+
+   border-radius: .5rem;
+   border-spacing: 0 0 .3rem;
+   color: #231b92;
+   background: rgb(92, 94, 93);
+   padding: .2rem;
+ }
+
+ table thead tr:first-child,
+ table tbody tr td:first-child {
+   border-radius: 0.22rem 0 0 0.22rem;
+ }
+
+ table thead tr:last-child,
+ table tbody tr td:last-child {
+   border-radius: 0 0.22rem 0.22rem 0;
+ }
+
+ table thead th {
+   background: rgba(129, 125, 125);
+   color: #f0f2f5;
+   font-weight: normal;
+   /*Primeiro valor do padding vai ser em cima e em baixo, Segundo valor vai ser das Laterais ,Direita e Esquerda*/
+   padding: 1rem 2rem;
+   text-align: left;
+ }
+
+ table tbody tr {
+   opacity: .9;
+ }
+
+ table tbody tr:hover {
+   opacity: 1;
+ }
+
+ table tbody td {
+   background: white;
+
+   padding: 1.5rem 2rem;
+ }
+
+ /* ABAIXO CSS DA PARTE DESCRIPTION DA TABELA*/
+
+ td.description {
+   color: black;
+   font-weight: bold;
+   font-family: 'Roboto Mono',
+     monospace;
+ }
+
+ td.income {
+   color: #1ab660;
+ }
+
+ td.expense {
+   color: #ec2525;
+ }
+
+ /*Fim das Configuraçoes da Tabela*/
+
+
+ /*Abaixo CSS DA PARTE DO Modal*/
+ .modal-overlay {
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.7);
+   position: fixed;
+   top: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   opacity: 0;
+   visibility: hidden;
+   z-index: 999;
+ }
+
+ .modal-overlay.active {
+   opacity: 1;
+   visibility: visible;
+ }
+
+ .modal {
+   background: #F0F2f5;
+   padding: 2.4rem;
+   position: relative;
+   z-index: 1;
+ }
+
+ /*Abaixo CSS do Form , DA PARTE DE FORMULARIOS*/
+
+ #form {
+   max-width: 500px;
+ }
+
+ #form h2 {
+   margin-top: 0;
+ }
+
+ input {
+   border: none;
+   border-radius: 0.2rem;
+   padding: 0.8rem;
+   width: 100%;
+ }
+
+ .input-group {
+   margin-top: 0.8rem;
+ }
+
+ .input-group help {
+   opacity: 0.4;
+ }
+
+ .input-group.actions {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ .input-group.actions .button,
+ .input-group.actions button {
+   width: 48%;
+ }
+
+ /*Fim das configuraçoes do formularios*/
+
+ /* CSS DO BOTÃO DE REMOVE*/
+ #remove {
+   cursor: pointer;
+   margin-left: 10px;
+ }
+
+ /*CSS DA IMAGEN*/
+ .image {
+   display: block;
+   position: static;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   margin-top: 2rem;
+   /*padding , primeiro valor em cima, segundo laterias , terceiro em baixo*/
+   padding: 4rem 1 2rem;
+
+ }
+
+ footer {
+   display: block;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   /*padding , primeiro valor em cima, segundo laterias , terceiro em baixo*/
+   padding: 4rem 1 2rem;
+   background-color: #365a29;
+   color: aliceblue;
+   font-weight: bold;
+   opacity: 0.9;
+ }
+
+ footer p {
+   display: block;
+ }

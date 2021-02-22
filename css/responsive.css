@@ -1,0 +1,111 @@
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+    /*Igual á 14px*/
+  }
+
+  #balance {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+}
+
+/*Abaixo CSS do TOOGLE*/
+
+
+.dark-mode {
+  display: flex;
+  float: right;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-mode h1 {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  top: 50px;
+
+}
+
+.toogle {
+  position: relative;
+  margin: 0 25px 25px;
+  display: inline-block;
+  margin-top: 20px;
+  width: 60px;
+  height: 32px;
+}
+
+
+
+/*Mas Abaixo CSS da parte da Label + CSS Do TOOGLE*/
+.slider {
+  position: absolute;
+  text-decoration: none;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--black);
+  border-radius: 90px;
+  -webkit-transition: .4s;
+  transition: .4s;
+
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(33, 214, 33);
+  border-radius: 50%;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.toogle input:checked+.slider {
+  background-color: #398ed4;
+}
+
+.toogle input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.toogle input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+
+/*Abaixo Configuraçoes da Seção,  de DATAS*/
+.data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  margin: 5px 0 5px;
+  letter-spacing: 2px;
+  color: aliceblue;
+  border: 1px solid rgb(129, 127, 127);
+  border-radius: 5px;
+  background: rgb(27, 173, 51);
+}
+
+.data h3 {
+  font-size: 1.3rem;
+}
+
+.data span {
+  margin-left: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dev.finance$</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header>
+      <img src="/assets/logo.svg" alt="Logo Dev Finance">
+
+      <div class="dark-mode">  
+        <div class="toogle">
+          <input id="switch" type="checkbox" name="theme">
+          <label class="slider" for="switch"></label>
+        </div>
+      </div>
+    </header>
+
+   <!--Conteudo principal da pagina Main abaixo--> 
+  <main class="container">
+
+      <!--Primeira Seção do Main-->
+    <section id="balance">
+        <h2 class="sr-only">Balanço</h2>
+
+        <div class="card">
+          <h3>  
+
+            <span>
+              INCOME
+            </span> 
+            <img src="/assets/income.svg" alt="image de entrada">
+          </h3>
+          <p id="incomeDisplay">R$ 0,00</p>
+        </div>
+
+        <div class="card">
+          <h3>
+
+            <span>
+             EXPENSES
+            </span> 
+            <img src="/assets/expense.svg" alt="image de saida">
+          </h3>
+          <p id="expenseDisplay">R$ 0,00</p>
+        </div>
+
+        <div class="card total">
+          <h3>
+
+            <span>
+              Total Account Balance
+            </span> 
+           <img src="/assets/total.svg" alt="image de entradas">
+          </h3>
+          <p id="totalDisplay">R$ 0,00</p>
+        </div>
+      
+    </section>
+
+     <!--Abaixo Segunda, Seção do Main-->
+
+    <section id="transaction">
+        
+          <h2 class="sr-only">Transaçôes</h2>
+
+          <a href="#"
+            onclick="Modal.open()"
+            class="button new">
+            + Nova Transação
+          </a>
+
+          <!--DIVE MES ABAIXO-->
+          <div class="data">
+            <h3>Transaçoes de</h3>
+            <span id="mes"></span>
+          </div>
+
+          <!--TABELA ABAIXO-->
+
+        <table id="data-table">
+
+          <!--Abaixo Cabeça da Tabela-->
+          <thead>
+            <tr>
+
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data</th>
+              <th>Remove</th>
+
+            </tr>
+          </thead>
+          <!--Abaixo Corpo da Tabela-->
+
+          <tbody>
+          
+          </tbody>
+
+        </table>
+    </section>
+
+  
+  </main>
+  <!--FIM DO MAIN-->
+
+  <!--ABAIXO COMEÇO DO MODAL-->
+  <div class="modal-overlay">
+
+    <div class="modal">
+
+      <div id="form">
+        <h2>Nova Transação</h2>
+
+        <form action="" onsubmit="Form.submit(event)">
+          <!--PRIMEIRA DIVE DO MODAL-->
+          <div class="input-group">
+            <label 
+            class="sr-only"
+            for="description">Descrição</label>
+
+            <input 
+              type="text" 
+              id="description" 
+              name="description"
+              placeholder="Descrição"
+            >
+
+          </div>
+
+            <!--ABAIXO 2 Group input-->
+            
+          <div class="input-group">
+
+            <label class="sr-only"
+              for="amount">Descrição
+            </label>
+
+            <input 
+              type="number"
+              step="0.01" 
+              id="amount" 
+              name="amount"
+              placeholder="0,00"
+            >
+            <small class="help">
+              Use o sinal - (negativo) para despesas e
+              ,(virgula) para casas decimais
+            </small>
+
+          </div>
+            <!--ABAIXO 3 Group input-->
+
+          <div class="input-group">
+
+            <label class="sr-only"
+              for="date">Data
+            </label>
+
+            <input 
+             type="date" 
+             id="date" 
+              name="date"
+            >
+
+          </div>
+            <!--ABAIXO 4 Group input-->
+
+          <div class="input-group actions">
+            <a href=""
+              onclick="Modal.close()"
+              class="button cancel">
+              Cancelar
+            </a>
+            <button>Salvar</button>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!--DIVE DA IMAGEN ABAIXO-->
+  <div class="image">
+    <span>
+      <img src="./img/maxresdefault.jpg" 
+        width="350px"
+        height="auto" alt="planilha de controle financeiro">
+    </span>
+  </div>
+    <!--RODA PÉ ABAIXO-->
+    <footer>   
+      <p>Dev.finance$</p>
+      <span>&copy;
+      Remade by: Rafael Alves</span>
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/toogle.js"></script>
+
+</body>
+</html>
